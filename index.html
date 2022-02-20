@@ -14,12 +14,25 @@
     <title>E-commerce Product Page</title>
   </head>
   <body>
+    <div class="container">
     <header class="header">
-      <nav class="nav">
+      <div class="wrapper">
+        <img
+          class="menu"
+          src="../e-comm-product/images/icon-menu.svg"
+          alt="hamburger menu"
+        />
         <img
           class="main_logo"
           src="../e-comm-product/images/logo.svg"
           alt="sneakers type logo"
+        />
+      </div>
+      <nav class="nav">
+        <img
+          class="close"
+          src="../e-comm-product/images/icon-close.svg"
+          alt="close icon"
         />
         <ul>
           <li><a href="">Collections</a></li>
@@ -29,103 +42,92 @@
           <li><a href="">Contact</a></li>
         </ul>
       </nav>
-      <img
-        class="cart_icon"
-        src="../e-comm-product/images/icon-cart.svg"
-        alt="cart shopping icon"
-      />
-      <img
-        class="avatar_image"
-        src="../e-comm-product/images/image-avatar.png"
-        alt="profile image"
-      />
+      <div class="cart_avatar">
+        <img
+          class="cart_icon"
+          src="../e-comm-product/images/icon-cart.svg"
+          alt="cart shopping icon"
+        />
+        <img
+          class="avatar_image"
+          src="../e-comm-product/images/image-avatar.png"
+          alt="profile image"
+        />
+      </div>
     </header>
 
-    <section class="product">
-      <!-- Product Showcase -->
-      <div class="product_showcase">
-        <div class="product_images">
-          <img
-            class="product_image"
-            src="../e-comm-product/images/image-product-1.jpg"
-            alt="two sneakers image"
-          />
-          <img
-            class="product_image"
-            src="../e-comm-product/images/image-product-2.jpg"
-            alt="two sneakers image"
-          />
-          <img
-            class="product_image"
-            src="../e-comm-product/images/image-product-3.jpg"
-            alt="two sneakers image"
-          />
-          <img
-            class="product_image"
-            src="../e-comm-product/images/image-product-4.jpg"
-            alt="two sneakers image"
-          />
-        </div>
-
-        <div class="thumbnail_images">
-          <img
-            src="../e-comm-product/images/image-product-1-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            src="../e-comm-product/images/image-product-2-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            src="../e-comm-product/images/image-product-3-thumbnail.jpg"
-            alt=""
-          />
-          <img
-            src="../e-comm-product/images/image-product-4-thumbnail.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <!-- Product Details -->
-      <div class="product_details">
-        <p>Sneaker Company</p>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll whitstand everything
-          the weather can offer.
-        </p>
-        <div class="price">
-          <p>$125.00</p>
-          <p>50%</p>
-        </div>
-        <p>$250.00</p>
-
-        <div>
-          <div class="counter">
-            <img
-              class="minus_icon"
-              src="../e-comm-product/images/icon-minus.svg"
-              alt="minus icon"
-            />
-            <p>0</p>
-            <img
-              class="plus_icon"
-              src="../e-comm-product/images/icon-plus.svg"
-              alt="plus icon"
-            />
+    <main>
+      <section class="product">
+        <!-- Product Carousel -->
+        <div class="carousel">
+          <div class="carousel__item carousel__item--visible">
+            <img src="../e-comm-product/images/image-product-1.jpg" alt="" />
           </div>
-
-          <button class="add_to_cart">
-            <img
-              class="cart_icon"
-              src="../e-comm-product/images/icon-cart.svg"
-              alt="cart shopping icon"
-            />Add to cart
-          </button>
+          <div class="carousel__item">
+            <img src="../e-comm-product/images/image-product-2.jpg" alt="" />
+          </div>
+          <div class="carousel__item">
+            <img src="../e-comm-product/images/image-product-3.jpg" alt="" />
+          </div>
+          <div class="carousel__item">
+            <img src="../e-comm-product/images/image-product-4.jpg" alt="" />
+          </div>
+    
+          <div class="carousel__actions">
+            <button id="carousel__button--prev" aria-label="previous slide">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button>
+            <button id="carousel__button--next" aria-label="next slide">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+
+        <!-- Product Details -->
+        <div class="product_details">
+          <p class="product_brand">Sneaker Company</p>
+          <h1 class="product_title">Fall Limited Edition Sneakers</h1>
+          <p class="product_text">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll whitstand everything
+            the weather can offer.
+          </p>
+          <div class="product_price">
+            <div class="price_discount">
+            <p class="price">$125.00</p>
+            <p class="discount">50%</p>
+          </div>
+            <p class="original_price">$250.00</p>
+           
+          </div>
+         
+
+          <div class="counter_add-cart-btn">
+            <div class="counter">
+              <img
+                class="minus_icon"
+                src="../e-comm-product/images/icon-minus.svg"
+                alt="minus icon"
+              />
+              <p>0</p>
+              <img
+                class="plus_icon"
+                src="../e-comm-product/images/icon-plus.svg"
+                alt="plus icon"
+              />
+            </div>
+
+            <button class="add_to_cart">
+              <i class="fas fa-shopping-cart"></i>Add to cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    </main>
+    <script src="../e-comm-product/main.js">
+      
+    </script>
+
   </body>
 </html>

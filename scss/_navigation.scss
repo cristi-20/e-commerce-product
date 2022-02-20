@@ -1,0 +1,61 @@
+// Mobile Menu
+.menu,.close {
+    cursor:pointer;
+    width: 20px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding-inline:1.5rem;
+    padding:2rem;
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 60%;
+    background:$white;
+    transform:translateX(-100%);
+    transition:transform .5s ease-in-out;
+    z-index:10000;
+   
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap:1.5rem;
+        padding-top:4rem;
+        font-weight: 600;
+
+        a {
+            color:$black;
+        }
+    }
+}
+
+.open-nav {
+    transform:translateX(0%);
+}
+
+// Tablet & Desktop
+@include md {
+    nav {
+        background:none;
+        transform:none;
+        position: initial;
+        height:auto;
+        padding:0;
+
+        ul {
+            flex-direction: row;
+            padding:0;
+           
+            a {
+                color:$darkGrayishBlue;
+            }
+        }
+    }
+
+    .close,.menu {
+        display: none;
+    }
+}
