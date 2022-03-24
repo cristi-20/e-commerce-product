@@ -1,0 +1,61 @@
+// ************
+// Mobile
+// ************
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem;
+    position: relative;
+
+    .menu_logo_wrapper, .cart_avatar_wrapper {
+        display: flex;
+        align-items: center;
+        gap:1rem;
+    }
+
+    .main_logo {
+        width: 130px;
+    }
+
+    .avatar_image {
+        width: 30px;
+    }
+}
+
+// ************
+// Tablets & Desktop
+// ************
+@include md {
+    .header {
+        margin-bottom: 6rem;
+
+        .cart_avatar_wrapper {
+            gap:2rem;
+            flex:1;
+            justify-content: flex-end;
+
+            .avatar_image {
+                width:50px;
+            }
+        }
+
+        .main_logo {
+            margin-right: 4rem;
+        } 
+    }
+
+    .header:after {
+        content:'';
+        position: absolute;
+        bottom:0;
+        left:50%;
+        width:95%;
+        height: 1px;
+        background:$grayishBlue;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+    }
+}

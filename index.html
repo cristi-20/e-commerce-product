@@ -11,12 +11,18 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../e-comm-product/css/index.css" />
+    <link rel="stylesheet" href="../e-comm-product/plugins/fullscreen-lightbox-gallery/lightboxed.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
     <title>E-commerce Product Page</title>
   </head>
   <body>
     <div class="container">
     <header class="header">
-      <div class="wrapper">
+      <div class="menu_logo_wrapper">
         <img
           class="menu"
           src="../e-comm-product/images/icon-menu.svg"
@@ -35,53 +41,111 @@
           alt="close icon"
         />
         <ul>
-          <li><a href="">Collections</a></li>
-          <li><a href="">Men</a></li>
-          <li><a href="">Women</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact</a></li>
+          <li class="nav_link "><a class="current" href="">Collections</a></li>
+          <li class="nav_link"><a href="">Men</a></li>
+          <li class="nav_link"><a href="">Women</a></li>
+          <li class="nav_link"><a href="">About</a></li>
+          <li class="nav_link"><a href="">Contact</a></li>
         </ul>
       </nav>
-      <div class="cart_avatar">
-        <img
-          class="cart_icon"
-          src="../e-comm-product/images/icon-cart.svg"
-          alt="cart shopping icon"
-        />
-        <img
-          class="avatar_image"
-          src="../e-comm-product/images/image-avatar.png"
-          alt="profile image"
-        />
+      <div class="cart_avatar_wrapper">
+        <div class = "cart_icon">
+          <button type = "button" id = "cart-btn">
+            <i class = "fas fa-shopping-cart"></i>
+            <span id = "cart-count-info"></span>
+          </button>  
       </div>
+      <img
+      class="avatar_image"
+      src="../e-comm-product/images/image-avatar.png"
+      alt="profile image"
+    />
+      </div>
+
+      <!-- The Cart Container -->
+      <div class = "cart-container">
+        <div class = "cart-list">
+          <!-- single item -->
+          <!-- <div class = "cart-item">
+            <img src = "images/armchair.png" alt = "product image">
+            <div class = "cart-item-info">
+              <h3 class = "cart-item-name">Arm Chair</h3>
+              <span class = "cart-item-category">Chair</span>
+              <span class = "cart-item-price">$120.00</span>
+            </div>
+  
+            <button type = "button" class = "cart-item-del-btn">
+              <i class = "fas fa-times"></i>
+            </button>
+          </div> -->
+          <!-- end of single item  -->
+        </div>
+  
+        <div class = "cart-total">
+          <h3 class="total">Total: $</h3>
+          <span id = "cart-total-value"></span>
+        </div>
+      </div>
+           <!-- /The Cart Container -->
     </header>
 
-    <main>
+    <main class="main">
       <section class="product">
-        <!-- Product Carousel -->
-        <div class="carousel">
-          <div class="carousel__item carousel__item--visible">
-            <img src="../e-comm-product/images/image-product-1.jpg" alt="" />
-          </div>
-          <div class="carousel__item">
-            <img src="../e-comm-product/images/image-product-2.jpg" alt="" />
-          </div>
-          <div class="carousel__item">
-            <img src="../e-comm-product/images/image-product-3.jpg" alt="" />
-          </div>
-          <div class="carousel__item">
-            <img src="../e-comm-product/images/image-product-4.jpg" alt="" />
-          </div>
-    
-          <div class="carousel__actions">
-            <button id="carousel__button--prev" aria-label="previous slide">
-              <i class="fas fa-chevron-circle-left"></i>
-            </button>
-            <button id="carousel__button--next" aria-label="next slide">
-              <i class="fas fa-chevron-circle-right"></i>
-            </button>
-          </div>
-        </div>
+        
+<!-- Product LightBox -->
+<div class="product_showcase">
+  <figure>
+  <img
+    class="lightboxed mainImg"
+    rel="group1"
+    src="../e-comm-product/images/image-product-1.jpg"
+    data-link="../e-comm-product/images/image-product-1.jpg"
+    alt="Image Alt"
+  />
+
+  <img
+  class="lightboxed mainImg2"
+  rel="group1"
+  src="../e-comm-product/images/image-product-2-thumbnail.jpg"
+  data-link="../e-comm-product/images/image-product-2.jpg"
+  alt="Image Alt"
+  
+/>
+
+<img
+  class="lightboxed mainImg3"
+  rel="group1"
+  src="../e-comm-product/images/image-product-3-thumbnail.jpg"
+  data-link="../e-comm-product/images/image-product-3.jpg"
+  alt="Image Alt"
+  
+/>
+
+<img
+  class="lightboxed mainImg4"
+  rel="group1"
+  src="../e-comm-product/images/image-product-4-thumbnail.jpg"
+  data-link="../e-comm-product/images/image-product-4.jpg"
+  alt="Image Alt"
+  
+/>
+  </figure>
+  
+  <div class="thumb_img_list">
+    <ul>
+      <li> <img    src="../e-comm-product/images/image-product-1.jpg" alt="" class="thumb1 thumb" 
+        /></li>
+      <li > <img   src="../e-comm-product/images/image-product-2.jpg" alt="" class="thumb2 thumb"
+        /></li>
+      <li > <img    src="../e-comm-product/images/image-product-3.jpg" alt="" class="thumb3 thumb" 
+        /></li>
+      <li > <img   src="../e-comm-product/images/image-product-4.jpg" alt="" class="thumb4 thumb" 
+        /></li>
+    </ul> 
+  </div>
+</div>
+
+<!-- /Product LightBox -->
 
         <!-- Product Details -->
         <div class="product_details">
@@ -102,7 +166,7 @@
           </div>
          
 
-          <div class="counter_add-cart-btn">
+          <div class="counter_cart_btn_wrapper">
             <div class="counter">
               <img
                 class="minus_icon"
@@ -117,17 +181,35 @@
               />
             </div>
 
-            <button class="add_to_cart">
-              <i class="fas fa-shopping-cart"></i>Add to cart
-            </button>
+            <div class = "product-list">
+              <!-- single item -->
+              <!-- <div class = "product-item">
+                <div class = "product-img">
+                  <img src = "images/bed.png" alt = "product image">
+                  <button type = "button" class = "add-to-cart-btn">
+                    <i class = "fas fa-shopping-cart"></i>Add To Cart
+                  </button>
+                </div>
+      
+                <div class = "product-content">
+                  <h3 class = "product-name">Wooden Bed</h3>
+                  <span class = "product-category">Bed</span>
+                  <p class = "product-price">$120.00</p>
+                </div>
+              </div> -->
+              <!-- end of single item -->
+            </div>
           </div>
         </div>
       </section>
+
+      
     </div>
     </main>
     <script src="../e-comm-product/main.js">
-      
     </script>
+    <script src="/frontendmentor/e-comm-product/plugins/fullscreen-lightbox-gallery/lightboxed.js"></script>
+    <script src="cart.js"></script>
 
   </body>
 </html>

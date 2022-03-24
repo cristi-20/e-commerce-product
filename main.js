@@ -17,54 +17,80 @@ const menu = document.querySelector(".menu");
 // /Hamburger Menu
 // *********************
 
+
+
 // ********************
-// Mobile Image Carousel
+//  Image Gallery
 // *********************
 
-let slidePosition = 0;
-const slides = document.getElementsByClassName('carousel__item');
-const totalSlides = slides.length;
+mainImg = document.querySelector(".mainImg");
+mainImg2 = document.querySelector(".mainImg2");
+mainImg3 = document.querySelector(".mainImg3");
+mainImg4= document.querySelector(".mainImg4");
 
-document.
-  getElementById('carousel__button--next')
-  .addEventListener("click", function() {
-    moveToNextSlide();
-  });
-document.
-  getElementById('carousel__button--prev')
-  .addEventListener("click", function() {
-    moveToPrevSlide();
-  });
 
-function updateSlidePosition() {
-  for (let slide of slides) {
-    slide.classList.remove('carousel__item--visible');
-    slide.classList.add('carousel__item--hidden');
-  }
+thumb1 = document.querySelector('.thumb1');
+thumb1Src = document.querySelector('.thumb1').src;
+thumb2 = document.querySelector('.thumb2');
+thumb2Src = document.querySelector('.thumb2').src;
+thumb3 = document.querySelector('.thumb3');
+thumb3Src = document.querySelector('.thumb3').src;
+thumb4 = document.querySelector('.thumb4');
+thumb4Src = document.querySelector('.thumb4').src;
 
-  slides[slidePosition].classList.add('carousel__item--visible');
+
+thumb1.addEventListener("click",function() {
+  mainImg.src = thumb1Src
+  mainImg.classList.remove("display-none");
+  mainImg2.classList.add("display-none");
+  mainImg3.classList.add("display-none");
+  mainImg4.classList.add("display-none");
+})
+
+thumb2.addEventListener("click",function() {
+    mainImg2.src = thumb2Src
+    mainImg2.classList.add("display-block");
+    mainImg2.classList.remove("display-none"); 
+    mainImg.classList.add("display-none");
+    mainImg3.classList.add("display-none");
+    mainImg4.classList.add("display-none");
+})
+
+thumb3.addEventListener("click",function() {
+    mainImg3.src = thumb3Src
+    mainImg3.classList.add("display-block");
+    mainImg3.classList.remove("display-none");
+    mainImg.classList.add("display-none");
+    mainImg2.classList.add("display-none");
+    mainImg4.classList.add("display-none"); 
+})
+
+thumb4.addEventListener("click",function() {
+    mainImg4.src = thumb4Src
+    mainImg4.classList.add("display-block");
+    mainImg4.classList.remove("display-none");
+    mainImg.classList.add("display-none");
+    mainImg2.classList.add("display-none");
+    mainImg3.classList.add("display-none");   
+})
+
+
+var thumb = document.querySelectorAll('.thumb');
+
+for (var i=thumb.length; i--;) {
+    thumb[i].addEventListener('click', eventHandler);
 }
 
-function moveToNextSlide() {
-  if (slidePosition === totalSlides - 1) {
-    slidePosition = 0;
-  } else {
-    slidePosition++;
-  }
+function eventHandler() {
+    this.className = 'active';
 
-  updateSlidePosition();
+    for (var i=thumb.length; i--;) {
+        if (thumb[i] != this) thumb[i].className = '';
+    }
 }
 
-function moveToPrevSlide() {
-  if (slidePosition === 0) {
-    slidePosition = totalSlides - 1;
-  } else {
-    slidePosition--;
-  }
 
-  updateSlidePosition();
-}
 
 // ********************
-// /Mobile Image Carousel
+//  /Image Gallery
 // *********************

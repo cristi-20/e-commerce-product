@@ -7,8 +7,8 @@
 nav {
     display: flex;
     flex-direction: column;
-    padding-inline:1.5rem;
-    padding:2rem;
+    padding-inline:2rem;
+    padding-block:2rem;
     position: fixed;
     left:0;
     top:0;
@@ -51,7 +51,30 @@ nav {
            
             a {
                 color:$darkGrayishBlue;
+                font-weight: 400;
             }
+
+            .current {
+                font-weight: 700;
+            }
+
+            .nav_link {
+                display: flex;
+                justify-content: center;
+                position: relative;
+            
+              
+            }
+
+            
+            .nav_link:hover:after {
+                content:'';
+                position: absolute;
+                bottom:-50%;
+                height: 3px;
+                width: 100%;
+                background: $orange;
+                                }
         }
     }
 
